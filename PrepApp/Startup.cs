@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PrepApp.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,8 @@ namespace PrepApp
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PrepApp", Version = "v1" });
             });
+
+            services.AddScoped<IDapperr, DapperrRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
